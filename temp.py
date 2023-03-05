@@ -2,8 +2,8 @@
 import socket
 import pickle
 
-HOST = "140.116.245.157"
-PORT = 10015
+HOST = "140.116.245.152"
+PORT = 1112
 bufsize = 4096 # 設定資料傳送的最大值(如果資料太大的話，請謹慎評估網路狀況再至server調整此參數)
 # 請將API網頁上獲得的token填至此處
 token = "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlX2lkIjoiMjciLCJuYmYiOjE2NjAxOTIyMTYsImV4cCI6MTgxNzg3MjIxNiwidmVyIjowLjEsImF1ZCI6IndtbWtzLmNzaWUuZWR1LnR3IiwidXNlcl9pZCI6IjEyMCIsImlzcyI6IkpXVCIsInN1YiI6IiIsInNjb3BlcyI6IjAiLCJpYXQiOjE2NjAxOTIyMTYsImlkIjo0NDN9.R1FXeE7Q2kgg8PzPnAX8r3cWjgWoIvfDwq-2pA6j6Lt8zoKjRrB2e0lmDlzhVhdk4BVUHtzbFm_ObS5cw1ndrhD-qcAT69hxaT3xfeJ7X7UPZvuUaW0kDJiyXP6Zs5sSic1x8T0SvkdHyge9Cv8LAl3EstoYVt22NdHeYzVfJmA"

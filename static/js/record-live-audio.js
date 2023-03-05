@@ -88,7 +88,7 @@ function onRecordingReady(e) {
   audio.src = URL.createObjectURL(e.data);
   upload(e.data);
 }
-
+// this function is for upoading recognized voice file
 function upload(blob) {
 
   var formData = new FormData();
@@ -116,3 +116,4 @@ function upload(blob) {
   }
   // document.getElementById("outputSentence").innerHTML="辨識結果:\n"+res.replaceAll(';','\n');
 }
+// this function will
