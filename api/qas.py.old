@@ -1,0 +1,25 @@
+import json
+import os
+import difflib
+from typing import Tuple
+
+def read_data():
+    data_path = os.path.join(os.path.dirname(__file__), 'data.json')
+    with open(data_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data
+
+
+def get_answer(question, model) -> Tuple[str, str, str]:
+    '''
+    Return:
+        question: Question to be displayed on website
+        taibun:   Answer to be displayed on website
+        tailo:    sequence for TTS api
+    '''
+    data = read_data()
+    for i in data['data']:
+        if difflib.SequenceMatcher(None, i['question'], question).ratio() > 0.7:
+            return i['question'], i['answer'], i['answer']
+    # return "對不起，我聽不懂你在說什麼"
+    return question, data['unk'][0]['taibun'], data['unk'][0]['tailo']

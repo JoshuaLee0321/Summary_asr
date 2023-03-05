@@ -1,0 +1,149 @@
+.flex-container{
+  display: inline-flex;
+}
+.flex-container{
+  flex-direction: row;
+}
+h1{
+  color:white;
+  padding-top:15px;
+  font-weight: bolder;
+  font-family:'Courier New', Courier, monospace;
+
+}
+.item{
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  color: cornflowerblue;
+  font-size: medium;
+
+}
+.taiwan_title{
+  font-size:40px;
+  color: white;
+  padding:5px;
+  margin-left: 150px;
+}
+.about_us{
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}
+.logo{
+  color: aquamarine;
+  animation-name: logo;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.logo:hover{
+  color: white;
+}
+.test{
+  background-color: yellow;
+}
+#MainShow {
+	margin:20px;
+	padding:15px 0px;
+	background-color:yellow;
+	border:1px #ccc solid;
+	width:800px;
+	float:left;
+}
+#Working_box{
+  background-color: blue;
+  margin: 20px;
+  padding: 15px;
+  width:850px;
+  float:right;
+
+}
+main{
+  display:flex;
+  background-color: red;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#model_explain{
+  resize: none;
+  height: 200px;
+  border: none;
+  text-align: justify;
+}
+/* button area */
+[data-role = "controls"] > button{
+  margin:60px auto;
+  outline: none;
+  display:block;
+
+  border:none;
+  background-color: #09AFD9;
+  background-image:linear-gradient(0deg,#09AFD9 0%,#97D9E1 100%);
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  text-indent: -100cm;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 3) inset,
+    0px 0px 0px 30px #fff, 0px 0px 0px 35px #333;
+}
+[data-role = "controls"] >button:hover{
+  margin:50px auto;
+}
+[data-role = "clicking"] > button{
+  margin:60px auto;
+  outline: none;
+  display:block;
+
+  border:none;
+  background-color: #09AFD9;
+  background-image:linear-gradient(0deg,red 0%,#97D9E1 100%);
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  text-indent: -100cm;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 3) inset,
+    0px 0px 0px 30px #fff, 0px 0px 0px 35px #333;
+}
+[data-role = "clicking"] >button:hover{
+  margin:50px auto;
+}
+#download_btn{
+  margin-left:70px;
+  border:none;
+}
+#download_btn:hover{
+  background-color: #495057;
+}
+/* unvisited link */
+a:link {
+  color: gray;
+}
+
+/* visited link */
+a:visited {
+  color: gainsboro;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: oldlace;
+}

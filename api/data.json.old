@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "question": "請問輪椅欲安怎借",
+            "answer": "請持證件至醫院 tua7-mng5，ka3保全辦理"
+        },
+        {
+            "question": "請問心臟科佇咧佗位",
+            "answer": "心臟科在三樓"
+        },
+        {
+            "question": "請問欲去佗位翕相",
+            "answer": "請至大廳櫃檯辦理"
+        },
+        {
+            "question": "欲去佗位注射",
+            "answer": "請你去本院的bang2 loo7 tsha7看"
+        },
+        {
+            "question": "我欲申請長照服務",
+            "answer": "你會使參考衛福部的長期照顧專區"
+        },
+        {
+            "question": "請問輪椅欲安怎足",
+            "answer": "請持證件至醫院 tua7-mng5，ka3保全辦理"
+        }
+    ],
+    "unk": [
+        {
+            "taibun": "拍謝，我聽不清楚你說甚麼", 
+            "tailo": "phái-sè，gua2 thiann1 be7 tshing1-tsho2 li2 kong2 siann2-mih4"}
+    ]
+}
