@@ -29,39 +29,39 @@ $(document).ready(function () {
 
 function record_init() {
   navigator.mediaDevices.getUserMedia({
-      audio: true, video: false
+    audio: true, video: false
   })
-      .then(function (stream) {
-          recordButton.disabled = false;
-          recordButton.addEventListener('click', startRecording);
-          stopButton.addEventListener('click', stopRecording);
-          try {
-              // chrome
-              recorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
-          } catch (e) {
-              // safari
-              recorder = new MediaRecorder(stream);
-          }
-          recorder.addEventListener('dataavailable', onRecordingReady);
-      })
-      .catch(function (err) {
-          console.log(err);
-      });
+    .then(function (stream) {
+      recordButton.disabled = false;
+      recordButton.addEventListener('click', startRecording);
+      stopButton.addEventListener('click', stopRecording);
+      try {
+        // chrome
+        recorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+      } catch (e) {
+        // safari
+        recorder = new MediaRecorder(stream);
+      }
+      recorder.addEventListener('dataavailable', onRecordingReady);
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
 };
 
 
-function click_disappear(){
+function click_disappear() {
   record_btn = document.getElementById('start');
   stop_btn = document.getElementById('stop');
   record_text = document.getElementById("record_text");
   stop_text = document.getElementById('stop_text');
-  if(record_btn.style.display =="none"){
+  if (record_btn.style.display == "none") {
     record_btn.style.display = 'flex';
     record_text.style.display = '';
     stop_btn.style.display = "none";
     stop_text.style.display = "none";
   }
-  else{
+  else {
     record_btn.style.display = 'none';
     stop_btn.style.display = "flex";
     record_text.style.display = 'none';
@@ -94,26 +94,38 @@ function upload(blob) {
   var formData = new FormData();
   formData.append("model", model);
   formData.append("file", blob, "file");
-
+  var audio2 = document.getElementById('audio2');
   try {
-      $.ajax({
-          method: "POST",
-          url: "/recognition",
-          data: formData,
-          processData: false,
-          contentType: false,
+    $.ajax({
+      method: "POST",
+      url: "/recognition",
+      data: formData,
+      processData: false,
+      contentType: false,
+    })
+      .done(function (result) {
+        console.log("Result: " + result.msg);
+        console.log(result);
+        // audio2.src = URL.createObjectURL(result.data);
+        let sum_intext = document.getElementById("intext_sums");
+        let new_intext = document.getElementById("intext_news");
+        new_intext.innerText = result['news_body'];
+        // sum_intext.innerText = result['Summary'];
+        for(i = 0; i < result['Summary'].length; i++){
+          sum_intext.innerText += (i + 1) + ": " + result['Summary'][i];
+        }
+        // alert("回傳成功");
       })
-          .done(function (result) {
-              console.log("Result: " + result.msg);
-              console.log(result);
-          })
-          .fail(function (result) {
-              console.log("FAILED: " + result);
-          });
+      .fail(function (result) {
+        console.log("FAILED: " + result);
+      });
+
+
   } catch (e) {
-      console.log("Error catched");
-      alert(e.message);
+    console.log("Error catched");
+    alert(e.message);
   }
+
   // document.getElementById("outputSentence").innerHTML="辨識結果:\n"+res.replaceAll(';','\n');
 }
 // this function will
