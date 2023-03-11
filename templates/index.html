@@ -154,6 +154,7 @@
                     console.log(response);
                     let sum_intext = document.getElementById("intext_sums");
                     let new_intext = document.getElementById("intext_news");
+                    sum_intext.innerText = '';
                     new_intext.innerText = response['news_body'];
                     for (i = 0; i < response['Summary'].length; i++) {
                         sum_intext.innerText += (i + 1) + ": " + response['Summary'][i] + '\n';

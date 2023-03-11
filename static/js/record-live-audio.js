@@ -110,7 +110,7 @@ function upload(blob) {
         let sum_intext = document.getElementById("intext_sums");
         let new_intext = document.getElementById("intext_news");
         new_intext.innerText = result['news_body'];
-        // sum_intext.innerText = result['Summary'];
+        sum_intext.innerText = '';
         for(i = 0; i < result['Summary'].length; i++){
           sum_intext.innerText += (i + 1) + ": " + result['Summary'][i];
         }
